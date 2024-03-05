@@ -16,6 +16,9 @@
 		CE95EAC42B963F5400962C8F /* MyContactListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95EAC32B963F5400962C8F /* MyContactListTests.swift */; };
 		CE95EACE2B963F5400962C8F /* MyContactListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95EACD2B963F5400962C8F /* MyContactListUITests.swift */; };
 		CE95EAD02B963F5400962C8F /* MyContactListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95EACF2B963F5400962C8F /* MyContactListUITestsLaunchTests.swift */; };
+		CE95EADD2B964FC300962C8F /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95EADC2B964FC300962C8F /* ContactsViewController.swift */; };
+		CE95EADF2B964FE200962C8F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95EADE2B964FE200962C8F /* MapViewController.swift */; };
+		CE95EAE12B964FF400962C8F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95EAE02B964FF400962C8F /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		CE95EAC92B963F5400962C8F /* MyContactListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyContactListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE95EACD2B963F5400962C8F /* MyContactListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyContactListUITests.swift; sourceTree = "<group>"; };
 		CE95EACF2B963F5400962C8F /* MyContactListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyContactListUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE95EADC2B964FC300962C8F /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		CE95EADE2B964FE200962C8F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CE95EAE02B964FF400962C8F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,9 @@
 				CE95EAB52B963F5400962C8F /* Assets.xcassets */,
 				CE95EAB72B963F5400962C8F /* LaunchScreen.storyboard */,
 				CE95EABA2B963F5400962C8F /* Info.plist */,
+				CE95EADC2B964FC300962C8F /* ContactsViewController.swift */,
+				CE95EADE2B964FE200962C8F /* MapViewController.swift */,
+				CE95EAE02B964FF400962C8F /* SettingsViewController.swift */,
 			);
 			path = MyContactList;
 			sourceTree = "<group>";
@@ -259,8 +268,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE95EAB12B963F5300962C8F /* ViewController.swift in Sources */,
+				CE95EADD2B964FC300962C8F /* ContactsViewController.swift in Sources */,
 				CE95EAAD2B963F5300962C8F /* AppDelegate.swift in Sources */,
+				CE95EADF2B964FE200962C8F /* MapViewController.swift in Sources */,
 				CE95EAAF2B963F5300962C8F /* SceneDelegate.swift in Sources */,
+				CE95EAE12B964FF400962C8F /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
