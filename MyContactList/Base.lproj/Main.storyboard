@@ -22,6 +22,9 @@
                                     <segment title="View"/>
                                     <segment title="Edit"/>
                                 </segments>
+                                <connections>
+                                    <action selector="changeEditMode:" destination="BYZ-38-t0r" eventType="valueChanged" id="NQ0-gZ-zbc"/>
+                                </connections>
                             </segmentedControl>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="fPo-RO-bJm">
                                 <rect key="frame" x="0.0" y="149.00000000000003" width="393" height="263.66666666666674"/>
@@ -196,7 +199,18 @@
                     </view>
                     <navigationItem key="navigationItem" title="Contact" id="E1A-fI-Kw6"/>
                     <connections>
+                        <outlet property="btnChange" destination="V0X-oZ-Uw1" id="E29-C0-gPX"/>
+                        <outlet property="lblBirthDate" destination="ObB-va-pH2" id="WMs-5o-Rcl"/>
                         <outlet property="scrollView" destination="fPo-RO-bJm" id="7Mu-ag-TfE"/>
+                        <outlet property="sgmtEditMode" destination="TAv-eu-VOy" id="Ooj-nu-6sJ"/>
+                        <outlet property="txtAddress" destination="vVt-df-BnV" id="H1R-Ne-HRW"/>
+                        <outlet property="txtCell" destination="vP3-wD-vvH" id="8CZ-p5-kF4"/>
+                        <outlet property="txtCity" destination="42w-ma-VFa" id="zWc-dt-D2X"/>
+                        <outlet property="txtEmail" destination="0yd-H7-RZh" id="YqO-fq-R4a"/>
+                        <outlet property="txtName" destination="yBQ-qP-jDf" id="R9u-PA-wbb"/>
+                        <outlet property="txtPhone" destination="mGK-4Q-gYD" id="k8j-cM-Adh"/>
+                        <outlet property="txtState" destination="UCy-af-QOn" id="KFO-wo-N3b"/>
+                        <outlet property="txtZip" destination="Htm-Ny-ofK" id="InJ-1O-LVZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
