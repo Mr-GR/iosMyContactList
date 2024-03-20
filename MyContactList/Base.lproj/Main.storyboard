@@ -162,6 +162,9 @@
                                                         <rect key="frame" x="253.66666666666671" y="0.0" width="119.33333333333334" height="34.333333333333336"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Change"/>
+                                                        <connections>
+                                                            <segue destination="sYN-dz-JMI" kind="show" id="wUJ-EE-YN9"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -198,7 +201,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="292.36641221374043" y="741.54929577464793"/>
+            <point key="canvasLocation" x="1078.6259541984732" y="819.71830985915494"/>
+        </scene>
+        <!--Birthday-->
+        <scene sceneID="yhZ-iT-F1w">
+            <objects>
+                <viewController title="Birthday" id="sYN-dz-JMI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hnl-aP-bVY">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" id="uIz-DY-RHY">
+                                <rect key="frame" x="23" y="114" width="347" height="87"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                    <!--1970-01-01 11:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sbt-AC-1jP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Birthday" id="koT-ig-cY9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SlM-Fu-IWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2092.3664122137402" y="827.46478873239437"/>
         </scene>
         <!--Maps-->
         <scene sceneID="LGJ-6q-Dnd">
@@ -214,7 +242,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sra-2c-UXk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1066.4122137404579" y="755.63380281690149"/>
+            <point key="canvasLocation" x="3683.2061068702287" y="751.4084507042254"/>
         </scene>
         <!--Settings-->
         <scene sceneID="OuD-cJ-E9O">
@@ -230,7 +258,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WXZ-qz-WmP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1927.4809160305342" y="741.54929577464793"/>
+            <point key="canvasLocation" x="4744.2748091603053" y="741.54929577464793"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ebh-41-Wps">
@@ -244,7 +272,7 @@
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="hpD-e7-rS9" kind="relationship" relationship="viewControllers" id="13v-8g-dp9"/>
+                        <segue destination="LmL-LF-cgC" kind="relationship" relationship="viewControllers" id="RUR-Ap-MBZ"/>
                         <segue destination="csV-i1-ahq" kind="relationship" relationship="viewControllers" id="qpQ-nK-ygE"/>
                         <segue destination="0IR-Of-t5S" kind="relationship" relationship="viewControllers" id="0aN-3E-eEf"/>
                     </connections>
@@ -253,24 +281,24 @@
             </objects>
             <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
         </scene>
-        <!--contacts-->
-        <scene sceneID="f7v-Fx-ygV">
+        <!--Contact-->
+        <scene sceneID="Jq1-Qg-Rli">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hpD-e7-rS9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="contacts" image="icons8-contacts-25" selectedImage="icons8-contacts-25" id="zRH-OD-MzM"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LmL-LF-cgC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Contact" image="icons8-contacts-25" selectedImage="icons8-contacts-25" id="Pz5-HU-Jyn"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QGY-vV-dWT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x9w-XK-xGb">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="w0f-sg-pYm"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="H9Q-DG-6SU"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="flg-Ib-vUT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zoS-B1-MIz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-634.35114503816794" y="741.54929577464793"/>
+            <point key="canvasLocation" x="154.96183206106869" y="819.71830985915494"/>
         </scene>
     </scenes>
     <resources>
