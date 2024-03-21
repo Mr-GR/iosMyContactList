@@ -256,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sra-2c-UXk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3683.2061068702287" y="751.4084507042254"/>
+            <point key="canvasLocation" x="3077" y="820"/>
         </scene>
         <!--Settings-->
         <scene sceneID="OuD-cJ-E9O">
@@ -265,14 +265,60 @@
                     <view key="view" contentMode="scaleToFill" id="Q6f-DH-qWO">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="bhp-bA-bSP">
+                                <rect key="frame" x="36" y="130" width="321" height="390"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort Order" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2h-Ub-kg5">
+                                        <rect key="frame" x="120.33333333333334" y="0.0" width="80.333333333333343" height="31"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pRa-GO-nAX">
+                                        <rect key="frame" x="1" y="87" width="320" height="216"/>
+                                    </pickerView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8L7-wY-UVL">
+                                        <rect key="frame" x="68.333333333333329" y="359" width="184.66666666666669" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ascending Sort: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLB-9Y-wGh">
+                                                <rect key="frame" x="0.0" y="0.0" width="125.66666666666667" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sUm-bl-cpN">
+                                                <rect key="frame" x="135.66666666666669" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="sortDirectionChanged:" destination="0IR-Of-t5S" eventType="valueChanged" id="MMO-dd-Ida"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="pRa-GO-nAX" firstAttribute="centerX" secondItem="bhp-bA-bSP" secondAttribute="centerX" id="ILe-re-NIg"/>
+                                    <constraint firstItem="pRa-GO-nAX" firstAttribute="centerY" secondItem="bhp-bA-bSP" secondAttribute="centerY" id="jFA-fm-bLB"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="1Pm-0n-tk6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bhp-bA-bSP" firstAttribute="leading" secondItem="1Pm-0n-tk6" secondAttribute="leading" constant="36" id="GTj-PQ-4Jq"/>
+                            <constraint firstItem="bhp-bA-bSP" firstAttribute="centerX" secondItem="Q6f-DH-qWO" secondAttribute="centerX" id="iwf-2f-4Jo"/>
+                            <constraint firstItem="bhp-bA-bSP" firstAttribute="top" secondItem="1Pm-0n-tk6" secondAttribute="top" constant="71" id="q3F-2V-QEw"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="icons8-settings-25" selectedImage="icons8-settings-25" id="TEu-Nr-UwF"/>
+                    <connections>
+                        <outlet property="pckSortField" destination="pRa-GO-nAX" id="oHB-SG-ECY"/>
+                        <outlet property="swAcending" destination="sUm-bl-cpN" id="Kmq-7f-3Q3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WXZ-qz-WmP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4744.2748091603053" y="741.54929577464793"/>
+            <point key="canvasLocation" x="4018" y="820"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ebh-41-Wps">
