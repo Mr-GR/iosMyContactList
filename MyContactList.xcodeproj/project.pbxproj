@@ -19,6 +19,7 @@
 		CE95EADD2B964FC300962C8F /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95EADC2B964FC300962C8F /* ContactsViewController.swift */; };
 		CE95EADF2B964FE200962C8F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95EADE2B964FE200962C8F /* MapViewController.swift */; };
 		CE95EAE12B964FF400962C8F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95EAE02B964FF400962C8F /* SettingsViewController.swift */; };
+		CE9B3D802BB1F3A900710110 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B3D7F2BB1F3A900710110 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		CE95EADC2B964FC300962C8F /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		CE95EADE2B964FE200962C8F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CE95EAE02B964FF400962C8F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CE9B3D7F2BB1F3A900710110 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				CE95EAAE2B963F5300962C8F /* SceneDelegate.swift */,
 				CE95EAB02B963F5300962C8F /* ViewController.swift */,
 				CE95EAB22B963F5300962C8F /* Main.storyboard */,
+				CE9B3D7F2BB1F3A900710110 /* Constants.swift */,
 				CE95EAB52B963F5400962C8F /* Assets.xcassets */,
 				CE95EAB72B963F5400962C8F /* LaunchScreen.storyboard */,
 				CE95EABA2B963F5400962C8F /* Info.plist */,
@@ -271,6 +274,7 @@
 				CE95EADD2B964FC300962C8F /* ContactsViewController.swift in Sources */,
 				CE95EAAD2B963F5300962C8F /* AppDelegate.swift in Sources */,
 				CE95EADF2B964FE200962C8F /* MapViewController.swift in Sources */,
+				CE9B3D802BB1F3A900710110 /* Constants.swift in Sources */,
 				CE95EAAF2B963F5300962C8F /* SceneDelegate.swift in Sources */,
 				CE95EAE12B964FF400962C8F /* SettingsViewController.swift in Sources */,
 			);
