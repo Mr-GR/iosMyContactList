@@ -166,7 +166,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Change"/>
                                                         <connections>
-                                                            <segue destination="sYN-dz-JMI" kind="show" id="wUJ-EE-YN9"/>
+                                                            <segue destination="sYN-dz-JMI" kind="show" identifier="segueContactDate" id="wUJ-EE-YN9"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -220,7 +220,7 @@
         <!--Birthday-->
         <scene sceneID="yhZ-iT-F1w">
             <objects>
-                <viewController title="Birthday" id="sYN-dz-JMI" sceneMemberID="viewController">
+                <viewController title="Birthday" id="sYN-dz-JMI" customClass="DataViewController" customModule="MyContactList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hnl-aP-bVY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -237,6 +237,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Birthday" id="koT-ig-cY9"/>
+                    <connections>
+                        <outlet property="dtpDate" destination="uIz-DY-RHY" id="Dzf-W3-eMY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SlM-Fu-IWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -276,7 +279,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pRa-GO-nAX">
-                                        <rect key="frame" x="1" y="87" width="320" height="216"/>
+                                        <rect key="frame" x="0.66666666666665719" y="87" width="320" height="216"/>
                                     </pickerView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8L7-wY-UVL">
                                         <rect key="frame" x="68.333333333333329" y="359" width="184.66666666666669" height="31"/>
