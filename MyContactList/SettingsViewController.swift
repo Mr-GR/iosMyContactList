@@ -13,7 +13,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var pckSortField: UIPickerView!
     @IBOutlet weak var swAcending: UISwitch!
     
-    let sortOrderItems: Array<String> = ["Contact Name", "City", "Birthday"]
+    let sortOrderItems: Array<String> = ["contact name", "city", "birthday"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +62,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let sortFiled = sortOrderItems[row]
         let settings = UserDefaults.standard
-        settings.setValue(sortFiled, forKey: Constants.kSortField)
+        settings.set(sortFiled, forKey: Constants.kSortField)
         settings.synchronize()
         print("Chosen item: \(sortOrderItems[row])")
     }
