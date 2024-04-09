@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE28C9882BBF523200829015 /* LocationDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28C9872BBF523200829015 /* LocationDemoViewController.swift */; };
 		CE29C9C82BBB2E24007E6CC1 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE29C9C72BBB2E24007E6CC1 /* ContactsTableViewController.swift */; };
 		CE7E79DD2BB3B16C002706E9 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7E79DC2BB3B16C002706E9 /* DataViewController.swift */; };
+		CE9277022BC474FF0035A501 /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9277012BC474FF0035A501 /* MapPoint.swift */; };
 		CE95EAAD2B963F5300962C8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95EAAC2B963F5300962C8F /* AppDelegate.swift */; };
 		CE95EAAF2B963F5300962C8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95EAAE2B963F5300962C8F /* SceneDelegate.swift */; };
 		CE95EAB12B963F5300962C8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95EAB02B963F5300962C8F /* ViewController.swift */; };
@@ -43,8 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE28C9872BBF523200829015 /* LocationDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDemoViewController.swift; sourceTree = "<group>"; };
 		CE29C9C72BBB2E24007E6CC1 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		CE7E79DC2BB3B16C002706E9 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		CE9277012BC474FF0035A501 /* MapPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPoint.swift; sourceTree = "<group>"; };
 		CE95EAA92B963F5300962C8F /* MyContactList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyContactList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE95EAAC2B963F5300962C8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE95EAAE2B963F5300962C8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 		CE95EAAB2B963F5300962C8F /* MyContactList */ = {
 			isa = PBXGroup;
 			children = (
+				CE28C9872BBF523200829015 /* LocationDemoViewController.swift */,
 				CE29C9C72BBB2E24007E6CC1 /* ContactsTableViewController.swift */,
 				CE95EAAC2B963F5300962C8F /* AppDelegate.swift */,
 				CE9B3D812BB1FC1400710110 /* MyContactListModel.xcdatamodeld */,
@@ -127,6 +132,7 @@
 				CE95EADC2B964FC300962C8F /* ContactsViewController.swift */,
 				CE95EADE2B964FE200962C8F /* MapViewController.swift */,
 				CE95EAE02B964FF400962C8F /* SettingsViewController.swift */,
+				CE9277012BC474FF0035A501 /* MapPoint.swift */,
 			);
 			path = MyContactList;
 			sourceTree = "<group>";
@@ -284,11 +290,13 @@
 				CE29C9C82BBB2E24007E6CC1 /* ContactsTableViewController.swift in Sources */,
 				CE95EADD2B964FC300962C8F /* ContactsViewController.swift in Sources */,
 				CE95EAAD2B963F5300962C8F /* AppDelegate.swift in Sources */,
+				CE9277022BC474FF0035A501 /* MapPoint.swift in Sources */,
 				CE95EADF2B964FE200962C8F /* MapViewController.swift in Sources */,
 				CE9B3D802BB1F3A900710110 /* Constants.swift in Sources */,
 				CE95EAAF2B963F5300962C8F /* SceneDelegate.swift in Sources */,
 				CE9B3D832BB1FC1400710110 /* MyContactListModel.xcdatamodeld in Sources */,
 				CE95EAE12B964FF400962C8F /* SettingsViewController.swift in Sources */,
+				CE28C9882BBF523200829015 /* LocationDemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

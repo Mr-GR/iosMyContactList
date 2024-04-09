@@ -56,33 +56,46 @@ class ContactsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contacts.count
     }
-
-    // Exercsies number 4 done! 
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactsCell", for: indexPath)
-        guard let contact = contacts[indexPath.row] as? Contact else {
-            fatalError("Failed to cast contact to Contact type")
-        }
+        let contact = contacts[indexPath.row] as? Contact
         
-        let name = contact.contactName ?? ""
-        let city = contact.city ?? ""
-        let displayFrom = "From"
-        let birthday = contact.birthday
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .long
-        dateFormatter.dateFormat = "MMMM d, YYYY"
-        
-        
-        let displayBorn = "Born on: "
-        
-        let displayDate = dateFormatter.string(from: birthday!)
-        
-        cell.textLabel?.text = [name, displayFrom, city].joined(separator:" ")
-        cell.detailTextLabel?.text = [displayBorn, displayDate].joined(separator: "")
+        cell.textLabel?.text = contact?.contactName
+        cell.detailTextLabel?.text = contact?.city
         cell.accessoryType = .detailDisclosureButton
         return cell
     }
+
+    // Exercsies number 4 done! 
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactsCell", for: indexPath)
+//        guard let contact = contacts[indexPath.row] as? Contact else {
+//            fatalError("Failed to cast contact to Contact type")
+//        }
+//        
+//        let name = contact.contactName ?? ""
+//        let city = contact.city ?? ""
+//        let displayFrom = "From"
+//        let birthday = contact.birthday
+//        let cellNum = contact.cellNumber ?? ""
+//    
+//        
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateStyle = .long
+//        dateFormatter.dateFormat = "MMMM d, YYYY"
+//        
+//        
+//        let displayBorn = "Born on: "
+//        
+//        let displayDate = dateFormatter.string(from: birthday!)
+//        
+//        cell.textLabel?.text = [name, displayFrom, city, cellNum].joined(separator:" ")
+//        cell.detailTextLabel?.text = [displayBorn, displayDate].joined(separator: " ")
+//        cell.accessoryType = .detailDisclosureButton
+//        return cell
+//    }
 
     
     // Override to support editing the table view.
