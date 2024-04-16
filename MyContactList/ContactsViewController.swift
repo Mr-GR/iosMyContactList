@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class ContactsViewController: UIViewController, UITextFieldDelegate, DateControllerDelegate {
+class ContactsViewController: UIViewController, UITextFieldDelegate, DateControllerDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     var currentContact: Contact?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -26,6 +26,7 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
     }
     
     
+    @IBOutlet weak var imgContactPicture: UIImageView!
     @IBOutlet weak var sgmtEditMode: UISegmentedControl!
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtAddress: UITextField!
@@ -64,6 +65,10 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
             formatter.dateStyle = .short
             if currentContact!.birthday != nil {
                 lblBirthDate.text = formatter.string(from: currentContact!.birthday as! Date)
+            }
+            
+            if let imageDate = currentContact?.image as? Data {
+                imgContactPicture.image=UIImage(data:imageDate)
             }
         }
         changeEditMode(self)
@@ -173,6 +178,31 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
         self.scrollView.contentInset = contentInset
         self.scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
     }
+    
+    @IBAction func changePicture(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let cameraController = UIImagePickerController()
+            cameraController.sourceType = .camera
+            cameraController.cameraCaptureMode = .photo
+            cameraController.delegate = self
+            cameraController.allowsEditing = true
+            self.present(cameraController, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.editedImage] as? UIImage {
+            imgContactPicture.contentMode = .scaleAspectFit
+            imgContactPicture.image = image
+            if currentContact == nil {
+                let context = appDelegate.persistentContainer.viewContext
+                currentContact = Contact(context: context)
+            }
+            currentContact?.image = image.jpegData(compressionQuality: 1.0)
+        }
+        dismiss(animated: true, completion: nil)
+    }
+   
     
     /*
     // MARK: - Navigation

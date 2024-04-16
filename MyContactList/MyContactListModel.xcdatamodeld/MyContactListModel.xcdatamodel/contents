@@ -6,6 +6,7 @@
         <attribute name="city" optional="YES" attributeType="String"/>
         <attribute name="contactName" optional="YES" attributeType="String"/>
         <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="Binary" storedInTruthFile="YES"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String"/>
         <attribute name="state" optional="YES" attributeType="String"/>
         <attribute name="streetAddress" optional="YES" attributeType="String"/>

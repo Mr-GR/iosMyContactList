@@ -31,7 +31,7 @@
                                 <rect key="frame" x="0.0" y="149.00000000000003" width="393" height="263.66666666666674"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="DYR-Sj-RJl">
-                                        <rect key="frame" x="8" y="0.0" width="373" height="307.66666666666669"/>
+                                        <rect key="frame" x="8" y="0.0" width="373" height="422.66666666666669"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gUB-7q-v1X">
                                                 <rect key="frame" x="0.0" y="0.0" width="373" height="34"/>
@@ -172,6 +172,26 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3PX-fE-yQz">
+                                                <rect key="frame" x="0.0" y="322.66666666666669" width="373" height="100"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nV1-me-kMi">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="2sA-bt-AxT"/>
+                                                            <constraint firstAttribute="height" constant="100" id="Kns-WV-ZJD"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksJ-jj-fMN">
+                                                        <rect key="frame" x="100" y="33" width="273" height="34.333333333333343"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Take Picture"/>
+                                                        <connections>
+                                                            <action selector="changePicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a4b-c1-Wyf"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -201,6 +221,7 @@
                     <navigationItem key="navigationItem" title="Contact" id="E1A-fI-Kw6"/>
                     <connections>
                         <outlet property="btnChange" destination="V0X-oZ-Uw1" id="E29-C0-gPX"/>
+                        <outlet property="imgContactPicture" destination="nV1-me-kMi" id="vks-Em-Hh6"/>
                         <outlet property="lblBirthDate" destination="ObB-va-pH2" id="WMs-5o-Rcl"/>
                         <outlet property="scrollView" destination="fPo-RO-bJm" id="7Mu-ag-TfE"/>
                         <outlet property="sgmtEditMode" destination="TAv-eu-VOy" id="Ooj-nu-6sJ"/>
@@ -343,17 +364,27 @@
                                     <constraint firstItem="pRa-GO-nAX" firstAttribute="centerY" secondItem="bhp-bA-bSP" secondAttribute="centerY" id="jFA-fm-bLB"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCr-u6-3a8">
+                                <rect key="frame" x="301.66666666666669" y="59.000000000000007" width="41.333333333333314" height="20.333333333333336"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1Pm-0n-tk6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ZCr-u6-3a8" firstAttribute="top" secondItem="1Pm-0n-tk6" secondAttribute="top" id="4XY-JL-PLm"/>
+                            <constraint firstItem="ZCr-u6-3a8" firstAttribute="top" secondItem="1Pm-0n-tk6" secondAttribute="top" id="Fzy-4R-vIu"/>
                             <constraint firstItem="bhp-bA-bSP" firstAttribute="leading" secondItem="1Pm-0n-tk6" secondAttribute="leading" constant="36" id="GTj-PQ-4Jq"/>
                             <constraint firstItem="bhp-bA-bSP" firstAttribute="centerX" secondItem="Q6f-DH-qWO" secondAttribute="centerX" id="iwf-2f-4Jo"/>
                             <constraint firstItem="bhp-bA-bSP" firstAttribute="top" secondItem="1Pm-0n-tk6" secondAttribute="top" constant="71" id="q3F-2V-QEw"/>
+                            <constraint firstItem="1Pm-0n-tk6" firstAttribute="trailing" secondItem="ZCr-u6-3a8" secondAttribute="trailing" constant="50" id="sSB-es-Afc"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="icons8-settings-25" selectedImage="icons8-settings-25" id="TEu-Nr-UwF"/>
                     <connections>
+                        <outlet property="lblBattery" destination="ZCr-u6-3a8" id="eFa-yQ-8RM"/>
                         <outlet property="pckSortField" destination="pRa-GO-nAX" id="oHB-SG-ECY"/>
                         <outlet property="swAcending" destination="sUm-bl-cpN" id="Kmq-7f-3Q3"/>
                     </connections>
