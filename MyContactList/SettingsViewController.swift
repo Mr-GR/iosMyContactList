@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreMotion
 
 class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -13,6 +14,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var pckSortField: UIPickerView!
     @IBOutlet weak var swAcending: UISwitch!
     
+    @IBOutlet weak var settingsView: UILabel!
     @IBOutlet weak var lblBattery: UILabel!
     
     let sortOrderItems: Array<String> = ["contactName", "city", "birthday"]
@@ -69,6 +71,8 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        self.startMotionDection()
+        
         let device = UIDevice.current
         print("Device Info:")
         print("Name: \(device.name)")
@@ -102,6 +106,8 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     override func viewDidDisappear(_ animated: Bool) {
         UIDevice.current.isBatteryMonitoringEnabled = false
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        appDelegate?.motionManager.stopAccelerometerUpdates()
     }
     
     @IBAction func sortDirectionChanged(_ sender: Any) {
@@ -132,5 +138,41 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         settings.synchronize()
         print("Chosen item: \(sortOrderItems[row])")
     }
-
+    
+    func startMotionDection() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let mManager = appDelegate.motionManager
+        if mManager.isAccelerometerAvailable {
+            mManager.accelerometerUpdateInterval = 0.05
+            mManager.startAccelerometerUpdates(to: OperationQueue.main) {
+                (data: CMAccelerometerData?, error: Error?) in
+                self.updateLabel(data: data!)
+            }
+        }
+    }
+    
+    func updateLabel(data: CMAccelerometerData) {
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        let tabBarHeight = self.tabBarController?.tabBar.frame.height
+        let moveFactor:Double = 15.0
+        var rect = lblBattery.frame
+        let moveToX = Double(rect.origin.x) + data.acceleration.x * moveFactor
+        let moveToY = Double(rect.origin.y + rect.size.height) - (data.acceleration.y * moveFactor)
+        let maxX = Double(settingsView.frame.size.width - rect.width)
+        let maxY = Double(settingsView.frame.size.height - tabBarHeight!)
+        let minY = Double(rect.size.height + statusBarHeight)
+        if (moveToX > 0 && moveToX < maxX) {
+            rect.origin.x += CGFloat(data.acceleration.x * moveFactor)
+        }
+        if (moveToY > minY && moveToY < maxY) {
+            rect.origin.y -= CGFloat(data.acceleration.y * moveFactor)
+        }
+        UIView.animate(withDuration: TimeInterval(0),
+                       delay: TimeInterval(0),
+                       options: UIView.AnimationOptions.curveEaseInOut,
+                       animations: {self.lblBattery.frame = rect},
+                       completion: nil)
+            
+        
+    }
 }

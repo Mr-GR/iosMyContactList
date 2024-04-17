@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
 class ContactsViewController: UIViewController, UITextFieldDelegate, DateControllerDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
@@ -87,10 +88,10 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
         let longPress = UILongPressGestureRecognizer.init(target:self,
                                                           action:#selector(callPhone(gesture:)))
         
-//        let longPress = UILongPressGestureRecognizer.init(target:self,          action:#selector(homePhone(gesture:)))
+        //        let longPress = UILongPressGestureRecognizer.init(target:self,          action:#selector(homePhone(gesture:)))
         
         lblPhone.addGestureRecognizer(longPress)
-      //  lblHomePhone.addGestureRecognizer(longPress)
+        //  lblHomePhone.addGestureRecognizer(longPress)
     }
     
     @objc func callPhone(gesture: UILongPressGestureRecognizer) {
@@ -103,36 +104,36 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
             }
         }
         
-//    func homePhone(gesture: UILongPressGestureRecognizer) {
-//        if gesture.state == .began {
-//            let number = txtPhone.text
-//            if number != nil {
-//                let url = NSURL(string: "telprompt://\(number!)")
-//                UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
-//                print("Calling Phone Number: \(url!)")
-//                }
-//            }
-//        }
+        //    func homePhone(gesture: UILongPressGestureRecognizer) {
+        //        if gesture.state == .began {
+        //            let number = txtPhone.text
+        //            if number != nil {
+        //                let url = NSURL(string: "telprompt://\(number!)")
+        //                UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+        //                print("Calling Phone Number: \(url!)")
+        //                }
+        //            }
+        //        }
     }
-        
-        
-        
+    
+    
+    
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-            if currentContact == nil {
-                let context = appDelegate.persistentContainer.viewContext
-                currentContact = Contact(context: context)
-            }
-            currentContact?.contactName = txtName.text
-            currentContact?.streetAddress = txtAddress.text
-            currentContact?.city = txtCity.text
-            currentContact?.state = txtState.text
-            currentContact?.zipCode = txtZip.text
-            currentContact?.cellNumber = txtCell.text
-            currentContact?.phoneNumber = txtPhone.text
-            currentContact?.email = txtEmail.text
-            return true
+        if currentContact == nil {
+            let context = appDelegate.persistentContainer.viewContext
+            currentContact = Contact(context: context)
         }
-
+        currentContact?.contactName = txtName.text
+        currentContact?.streetAddress = txtAddress.text
+        currentContact?.city = txtCity.text
+        currentContact?.state = txtState.text
+        currentContact?.zipCode = txtZip.text
+        currentContact?.cellNumber = txtCell.text
+        currentContact?.phoneNumber = txtPhone.text
+        currentContact?.email = txtEmail.text
+        return true
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -158,15 +159,15 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
         }
     }
     
-
+    
     @objc func saveContact() {
         
         appDelegate.saveContext()
         sgmtEditMode.selectedSegmentIndex = 0
         changeEditMode(self)
     }
-
-
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -180,10 +181,10 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
     
     func registerKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector:
-            #selector(ContactsViewController.keyboardDidShow(notification:)), name:
+                                                #selector(ContactsViewController.keyboardDidShow(notification:)), name:
                                                 UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector:
-            #selector(ContactsViewController.keyboardWillHide(notification:)), name:
+                                                #selector(ContactsViewController.keyboardWillHide(notification:)), name:
                                                 UIResponder.keyboardWillHideNotification, object: nil)
     }
     
@@ -212,38 +213,69 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
     }
     
     @IBAction func changePicture(_ sender: Any) {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let cameraController = UIImagePickerController()
-            cameraController.sourceType = .camera
-            cameraController.cameraCaptureMode = .photo
-            cameraController.delegate = self
-            cameraController.allowsEditing = true
-            self.present(cameraController, animated: true, completion: nil)
-        }
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[.editedImage] as? UIImage {
-            imgContactPicture.contentMode = .scaleAspectFit
-            imgContactPicture.image = image
-            if currentContact == nil {
-                let context = appDelegate.persistentContainer.viewContext
-                currentContact = Contact(context: context)
+        if AVCaptureDevice.authorizationStatus(for: AVMediaType.video) != AVAuthorizationStatus.authorized
+            
+        {
+            let alertController = UIAlertController(title: "Camera Access Denied",
+                                                    message: "In order to take pictures, you need to allow the app to access the camera in the settings",
+                                                    preferredStyle: .alert)
+            let actionSettings = UIAlertAction(title: "Open Settings",
+                                               style: .default) {action in
+                self.openSettings()
             }
-            currentContact?.image = image.jpegData(compressionQuality: 1.0)
+            let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alertController.addAction(actionSettings)
+            alertController.addAction(actionCancel)
+            present(alertController, animated: true, completion: nil)
         }
-        dismiss(animated: true, completion: nil)
+        else {
+            
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                let cameraController = UIImagePickerController()
+                cameraController.sourceType = .camera
+                cameraController.cameraCaptureMode = .photo
+                cameraController.delegate = self
+                cameraController.allowsEditing = true
+                self.present(cameraController, animated: true, completion: nil)
+            }
+        }
     }
-   
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func openSettings() {
+        if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(settingsURL)
+            }
+        }
     }
-    */
-
-}
+        
+    
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            if let image = info[.editedImage] as? UIImage {
+                imgContactPicture.contentMode = .scaleAspectFit
+                imgContactPicture.image = image
+                if currentContact == nil {
+                    let context = appDelegate.persistentContainer.viewContext
+                    currentContact = Contact(context: context)
+                }
+                currentContact?.image = image.jpegData(compressionQuality: 1.0)
+            }
+            dismiss(animated: true, completion: nil)
+        }
+        
+        
+        
+        
+        /*
+         // MARK: - Navigation
+         
+         // In a storyboard-based application, you will often want to do a little preparation before navigation
+         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destination.
+         // Pass the selected object to the new view controller.
+         }
+         */
+        
+    }

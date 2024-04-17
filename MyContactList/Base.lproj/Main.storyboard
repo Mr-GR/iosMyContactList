@@ -388,6 +388,7 @@
                     <connections>
                         <outlet property="lblBattery" destination="ZCr-u6-3a8" id="eFa-yQ-8RM"/>
                         <outlet property="pckSortField" destination="pRa-GO-nAX" id="oHB-SG-ECY"/>
+                        <outlet property="settingsView" destination="ZCr-u6-3a8" id="5m8-0h-P8T"/>
                         <outlet property="swAcending" destination="sUm-bl-cpN" id="Kmq-7f-3Q3"/>
                     </connections>
                 </viewController>
