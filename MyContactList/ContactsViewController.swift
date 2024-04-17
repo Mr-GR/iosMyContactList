@@ -39,8 +39,10 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
     @IBOutlet weak var lblBirthDate: UILabel!
     @IBOutlet weak var btnChange: UIButton!
     
+    @IBOutlet weak var lblPhone: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var lblHomePhone: UILabel!
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "segueContactDate") {
             let dateController = segue.destination as! DataViewController
@@ -81,6 +83,36 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
                                 action: #selector(UITextFieldDelegate.textFieldShouldEndEditing(_:)),
                                 for: UIControl.Event.editingDidEnd)
         }
+        
+        let longPress = UILongPressGestureRecognizer.init(target:self,
+                                                          action:#selector(callPhone(gesture:)))
+        
+//        let longPress = UILongPressGestureRecognizer.init(target:self,          action:#selector(homePhone(gesture:)))
+        
+        lblPhone.addGestureRecognizer(longPress)
+      //  lblHomePhone.addGestureRecognizer(longPress)
+    }
+    
+    @objc func callPhone(gesture: UILongPressGestureRecognizer) {
+        if gesture.state == .began {
+            let number = txtCell.text
+            if number != nil {
+                let url = NSURL(string: "telprompt://\(number!)")
+                UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+                print("Calling Phone Number: \(url!)")
+            }
+        }
+        
+//    func homePhone(gesture: UILongPressGestureRecognizer) {
+//        if gesture.state == .began {
+//            let number = txtPhone.text
+//            if number != nil {
+//                let url = NSURL(string: "telprompt://\(number!)")
+//                UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+//                print("Calling Phone Number: \(url!)")
+//                }
+//            }
+//        }
     }
         
         

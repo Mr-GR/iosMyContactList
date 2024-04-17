@@ -113,7 +113,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lmg-mR-Sbt">
                                                         <rect key="frame" x="0.0" y="0.0" width="171.66666666666666" height="62.333333333333336"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cell Phone:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dzt-yi-FxB">
+                                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cell Phone:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dzt-yi-FxB">
                                                                 <rect key="frame" x="0.0" y="0.0" width="171.66666666666666" height="20.333333333333332"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
@@ -129,7 +129,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dDu-AO-gTF">
                                                         <rect key="frame" x="201.66666666666663" y="0.0" width="171.33333333333337" height="62.333333333333336"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Phone: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgb-c9-kVd">
+                                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Phone: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgb-c9-kVd">
                                                                 <rect key="frame" x="0.0" y="0.0" width="171.33333333333334" height="20.333333333333332"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
@@ -223,6 +223,8 @@
                         <outlet property="btnChange" destination="V0X-oZ-Uw1" id="E29-C0-gPX"/>
                         <outlet property="imgContactPicture" destination="nV1-me-kMi" id="vks-Em-Hh6"/>
                         <outlet property="lblBirthDate" destination="ObB-va-pH2" id="WMs-5o-Rcl"/>
+                        <outlet property="lblHomePhone" destination="jgb-c9-kVd" id="lDj-A4-x12"/>
+                        <outlet property="lblPhone" destination="Dzt-yi-FxB" id="cj3-q5-AbF"/>
                         <outlet property="scrollView" destination="fPo-RO-bJm" id="7Mu-ag-TfE"/>
                         <outlet property="sgmtEditMode" destination="TAv-eu-VOy" id="Ooj-nu-6sJ"/>
                         <outlet property="txtAddress" destination="vVt-df-BnV" id="H1R-Ne-HRW"/>
